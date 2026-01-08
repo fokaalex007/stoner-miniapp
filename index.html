@@ -19,12 +19,16 @@
   </div>
 
   <script>
-    function order(text) {
-      Telegram.WebApp.openLink(
-        "https://wa.me/qr/WZCUKZ7ANGHJN1" + encodeURIComponent(text)
-      );
-    }
-  </script>
+  const tg = window.Telegram.WebApp;
+
+  tg.ready(); // 👈 THIS LINE IS THE KEY
+
+  function order(text) {
+    tg.openLink(
+      "https://wa.me/qr/WZCUKZ7ANGHJN1" + encodeURIComponent(text)
+    );
+  }
+</script>
 
 </body>
 </html>
